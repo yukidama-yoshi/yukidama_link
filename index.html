@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>ゆきだまの案内ページ</title>
   <style>
+    /* 全体設定 */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,7 +15,7 @@
       background-position: center center;
       background-repeat: no-repeat;
       transition: background-image 0.5s ease-in-out;
-      color: black;
+      color: black; /* light modeのデフォルトの文字色 */
     }
 
     h1 {
@@ -27,40 +28,55 @@
       margin-bottom: 2em;
     }
 
+    /* ボタンの共通スタイル */
     .link-button {
       display: block;
       margin: 1em auto;
       padding: 1em 2em;
       width: 280px;
-      background-color: rgba(255, 255, 255, 0.85);
-      color: black;
+      background-color: rgba(255, 255, 255, 0.85); /* light modeのデフォルトの背景色 */
+      color: black; /* light modeのデフォルトの文字色 */
       text-decoration: none;
       border-radius: 8px;
       font-size: 1.1em;
-      transition: background-color 0.3s;
+      /* 色、拡大、影の変化を滑らかにするためのトランジションを追加 */
+      transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
+    /* light mode ホバー時のスタイル：色反転 + 浮き上がり */
     .link-button:hover {
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: black; /* 背景色を黒に */
+      color: white; /* 文字色を白に */
+      transform: scale(1.02); /* わずかに拡大 */
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* 影を追加 */
     }
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-image: url('photo/night.jpg');
-        color: white;
-      }
-      .link-button {
-        background-color: rgba(0, 0, 0, 0.75);
-        color: white;
-      }
-      .link-button:hover {
-        background-color: rgba(0, 0, 0, 0.85);
-      }
-    }
-
+    /* light mode (デフォルト) */
     @media (prefers-color-scheme: light) {
       body {
         background-image: url('photo/morning.jpg');
+      }
+    }
+    
+    /* dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-image: url('photo/night.jpg');
+        color: white; /* dark modeのデフォルトの文字色 */
+      }
+      
+      /* dark modeのボタンの通常時 */
+      .link-button {
+        background-color: rgba(0, 0, 0, 0.75); /* 暗い背景 */
+        color: white; /* 白文字 */
+      }
+      
+      /* dark mode ホバー時のスタイル：色反転 + 浮き上がり */
+      .link-button:hover {
+        background-color: white; /* 背景色を白に */
+        color: black; /* 文字色を黒に */
+        transform: scale(1.02); /* わずかに拡大 */
+        box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3); /* 白い影を追加 */
       }
     }
   </style>
