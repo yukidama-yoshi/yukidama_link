@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>ゆきだま</title>
   <style>
-    /* 全体設定 */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,75 +13,100 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       transition: background-image 0.5s ease-in-out;
-      color: black; /* light modeのデフォルトの文字色 */
+      color: black;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center; 
+      justify-content: center;
+      margin-top: 3.5em;
+      margin-bottom: 1.2em;
+    }
+
+    .profile-icon-wrapper {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: white;
+      margin-right: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-icon-wrapper img {
+      width: 55px; 
+      height: 55px;
+      object-fit: contain;
+      position: absolute; 
+      flex-shrink: 0;
     }
 
     h1 {
-      font-size: 2em;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
+      font-size: 2.2em; 
+      margin: 0;
+      letter-spacing: 0.05em;
     }
 
     p {
-      margin-bottom: 2em;
+      margin-bottom: 2.2em;
+      font-size: 1.05em;
     }
 
-    /* ボタンの共通スタイル */
     .link-button {
       display: block;
-      margin: 1em auto;
-      padding: 1em 2em;
-      width: 280px;
-      background-color: rgba(255, 255, 255, 0.85); /* light modeのデフォルトの背景色 */
-      color: black; /* light modeのデフォルトの文字色 */
+      margin: 1.1em auto;
+      padding: 1.1em 2em;
+      width: 290px;
+      background-color: rgba(255, 255, 255, 0.85);
+      color: black;
       text-decoration: none;
       border-radius: 8px;
       font-size: 1.1em;
-      /* 色、拡大、影の変化を滑らかにするためのトランジションを追加 */
       transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
-    /* light mode ホバー時のスタイル：色反転 + 浮き上がり */
     .link-button:hover {
-      background-color: black; /* 背景色を黒に */
-      color: white; /* 文字色を白に */
-      transform: scale(1.02); /* わずかに拡大 */
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* 影を追加 */
+      background-color: black;
+      color: white;
+      transform: scale(1.02);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     }
 
-    /* light mode (デフォルト) */
     @media (prefers-color-scheme: light) {
-      body {
-        background-image: url('photo/morning.jpg');
-      }
+      body { background-image: url('photo/morning.jpg'); }
     }
-    
-    /* dark mode */
     @media (prefers-color-scheme: dark) {
       body {
         background-image: url('photo/night.jpg');
-        color: white; /* dark modeのデフォルトの文字色 */
+        color: white;
       }
-      
-      /* dark modeのボタンの通常時 */
       .link-button {
-        background-color: rgba(0, 0, 0, 0.75); /* 暗い背景 */
-        color: white; /* 白文字 */
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
       }
-      
-      /* dark mode ホバー時のスタイル：色反転 + 浮き上がり */
       .link-button:hover {
-        background-color: white; /* 背景色を白に */
-        color: black; /* 文字色を黒に */
-        transform: scale(1.02); /* わずかに拡大 */
-        box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3); /* 白い影を追加 */
+        background-color: white;
+        color: black;
+        box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3);
       }
     }
   </style>
 </head>
 <body>
-  <h1>ゆきだま</h1>
+
+  <div class="header-container">
+    <div class="profile-icon-wrapper">
+      <img src="photo/ykiconkun.png" alt="ゆきだまアイコン">
+    </div>
+    <h1>ゆきだま</h1>
+  </div>
+
   <p>どこにジャンプしますか？</p>
 
   <a class="link-button" href="https://yukidama-yoshi.github.io/index.html" target="_blank">ホームページA館</a>
@@ -92,5 +116,6 @@
   <a class="link-button" href="https://note.com/yukidama_yoshi" target="_blank">note</a>
   <a class="link-button" href="https://www.youtube.com/@yukidama-yoshi" target="_blank">YouTube</a>
   <a class="link-button" href="https://yukidama-yoshi.doorblog.jp/" target="_blank">日記</a>
+
 </body>
 </html>
