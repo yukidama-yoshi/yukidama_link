@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ゆきだま</title>
+  <link rel="icon" href="photo/ykfabikonkun.png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      text-align: center;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      transition: background-image 0.5s ease-in-out;
+      color: black;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center; 
+      justify-content: center;
+      margin-top: 3.5em;
+      margin-bottom: 1.2em;
+    }
+
+    .profile-icon-wrapper {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: white;
+      margin-right: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-icon-wrapper img {
+      width: 55px; 
+      height: 55px;
+      object-fit: contain;
+      position: absolute; 
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: 2.2em; 
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      margin-bottom: 2.2em;
+      font-size: 1.05em;
+    }
+
+    .link-button {
+      display: block;
+      margin: 1.1em auto;
+      padding: 1.1em 2em;
+      width: 290px;
+      background-color: rgba(255, 255, 255, 0.85);
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .link-button:hover {
+      background-color: black;
+      color: white;
+      transform: scale(1.02);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (prefers-color-scheme: light) {
+      body { background-image: url('photo/morning.jpg'); }
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-image: url('photo/night.jpg');
+        color: white;
+      }
+      .link-button {
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+      }
+      .link-button:hover {
+        background-color: white;
+        color: black;
+        box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-container">
+    <div class="profile-icon-wrapper">
+      <img src="photo/ykiconkun.png" alt="ゆきだまアイコン">
+    </div>
+    <h1>ゆきだま</h1>
+  </div>
+
+  <p>どこにジャンプしますか？</p>
+
+  <a class="link-button" href="https://yukidama-yoshi.github.io/index.html" target="_blank">ホームページA館</a>
+  <a class="link-button" href="https://sites.google.com/view/yukidama-yoshi/" target="_blank">ホームページB館</a>
+  <a class="link-button" href="https://scratch.mit.edu/users/yukidama_/" target="_blank">Scratch</a>
+  <a class="link-button" href="https://twitter.com/yukidama_yoshi" target="_blank">Twitter（旧X）</a>
+  <a class="link-button" href="https://note.com/yukidama_yoshi" target="_blank">note</a>
+  <a class="link-button" href="https://www.youtube.com/@yukidama-yoshi" target="_blank">YouTube</a>
+  <a class="link-button" href="https://yukidama-yoshi.doorblog.jp/" target="_blank">日記</a>
+
+</body>
+</html>
